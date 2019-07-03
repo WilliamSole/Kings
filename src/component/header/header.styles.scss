@@ -20,6 +20,12 @@
 
     .option {
       padding: 10px 15px;
+      cursor: pointer;
+      text-transform: capitalize;
+
+      &:hover {
+        border-bottom: 1px solid black;
+      }
     }
   }
 }
