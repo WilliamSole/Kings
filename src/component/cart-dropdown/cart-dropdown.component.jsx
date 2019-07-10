@@ -11,6 +11,7 @@ import CartItem from '../cart-item/cart-item.component';
 
 import { CartDropdownContainer, CartItemsContainer, EmptyMessageContainer } from './cart-dropdown.styles';
 
+// Provides dropdown functionality when you click the shopping bag icon
 const CartDropdown = ({ cartItems, history, dispatch }) => (
     <CartDropdownContainer>
         <CartItemsContainer>

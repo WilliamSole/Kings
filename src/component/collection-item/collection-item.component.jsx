@@ -5,6 +5,7 @@ import { addItem } from '../../redux/cart/cart.actions';
 
 import { CollectionItemContainer, CollectionFooterContainer, AddButton, BackgroundImage, NameContainer, PriceContainer } from './collection-item.styles';
 
+// Show item details on the shop page as well as the collection page, allows user to add items to shopping bag
 const CollectionItem = ({ item, addItem }) => {
     const { name, price, imageUrl } = item;
 

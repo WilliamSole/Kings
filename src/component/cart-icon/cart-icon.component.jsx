@@ -7,6 +7,7 @@ import { selectCarItemsCount } from '../../redux/cart/cart.selectors';
 
 import { CartContainer, ShoppingIcon, ItemCountContainer } from './cart-icon.styles'
 
+// Shows a shopping bag icon and an item count within the header component
 const CartIcon = ({ toggleCartHidden, itemCount }) => (
     <CartContainer onClick={toggleCartHidden}>
         <ShoppingIcon />

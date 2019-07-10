@@ -6,6 +6,7 @@ const onToken = token => {
     alert('Payment Sucessful');
 }
 
+// Adds stripe checkout functionality for payment handling
 const StripeCheckoutButton = ({ price }) => {
     const priceForStripe = price * 100;
     const publishableKey = 'pk_test_N6jzoWOrQ4Ojbb5mNnbzGvin00JWxDDvA9';

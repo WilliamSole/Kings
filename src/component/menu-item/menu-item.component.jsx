@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import { MenuItemContainer, BackgroundImageContainer, ContentContainer, ContentTitle, ContentSubtitle } from './menu-item.styles';
 
+// Loads icons seen on homepage
 const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
     <MenuItemContainer
         size={size}

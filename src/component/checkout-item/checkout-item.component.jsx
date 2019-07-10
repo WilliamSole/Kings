@@ -5,6 +5,7 @@ import { clearItemFromCart, removeItem, addItem } from '../../redux/cart/cart.ac
 
 import { CheckoutItemContainer, ImageContainer, TextContainer, QuantityContainer, RemoveItemContainer } from './checkout-item.styles'
 
+// Shows all the items details and allows the user to increase/decrease quantity as well as remove items from the checkout page component
 const CheckoutItem = ({ item, clearItem, removeItem, addItem }) => {
     const { name, quantity, price, imageUrl } = item;
 

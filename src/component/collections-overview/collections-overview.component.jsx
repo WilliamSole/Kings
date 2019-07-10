@@ -8,6 +8,7 @@ import CollectionPreview from '../collection-preview/collection-preview.componen
 
 import { CollectionsOverviewContainer } from './collections-overview.styles';
 
+// Wraps the collection preview component with a modified component, used for displaying the loading icon
 const CollectionsOverview = ({ collections }) => (
     <CollectionsOverviewContainer>
         {

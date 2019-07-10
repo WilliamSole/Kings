@@ -8,6 +8,7 @@ import MenuItem from '../menu-item/menu-item.component';
 
 import { DirectoryMenuContainer } from './directory.styles';
 
+//Shows items on homepage 
 const Directory = ({sections}) => (
     <DirectoryMenuContainer>
         {
