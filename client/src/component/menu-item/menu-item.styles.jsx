@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const MenuItemContainer = styled.div`
-	height: ${({ size }) => (size ? '380px' : '240px')};
+	height: ${({ size }) => (size ? '380px' : '240px')}
 	min-width: 30%;
 	overflow: hidden;
 	flex: 1 1 auto;
@@ -26,6 +26,9 @@ export const MenuItemContainer = styled.div`
   }
   &:last-child {
     margin-left: 7.5px;
+  }
+  @media screen and (max-width: 800px) {
+    height: 200px;
   }
 `;
 
@@ -55,7 +58,6 @@ export const ContentTitle = styled.span`
   margin-bottom: 6px;
   font-size: 22px;
   color: #4a4a4a;
-  text-transform: uppercase;
 `;
 
 export const ContentSubtitle = styled.span`

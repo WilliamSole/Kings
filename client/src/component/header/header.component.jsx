@@ -11,10 +11,10 @@ import { ReactComponent as Logo } from '../../assets/crown.svg';
 
 import { signOutStart } from '../../redux/user/user.actions';
 
-import { HeaderContiner, LogoContainer, OptionsContainer, OptionLink } from './header.styles';
+import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink } from './header.styles';
 
 const Header = ({ currentUser, hidden, signOutStart }) => (
-    <HeaderContiner>
+    <HeaderContainer>
         <LogoContainer 
             to='/'
         >
@@ -49,7 +49,7 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
             <CartIcon />
         </OptionsContainer>
         { hidden ? null : <CartDropdown /> }
-    </HeaderContiner>
+    </HeaderContainer>
 )
 
 const mapStateToProps = createStructuredSelector({
