@@ -3,10 +3,16 @@ import { connect } from 'react-redux';
 
 import { addItem } from '../../redux/cart/cart.actions';
 
-import { CollectionItemContainer, CollectionFooterContainer, AddButton, BackgroundImage, NameContainer, PriceContainer } from './collection-item.styles';
+import {
+    CollectionItemContainer,
+    CollectionFooterContainer,
+    AddButton,
+    BackgroundImage,
+    NameContainer,
+    PriceContainer
+} from './collection-item.styles';
 
-// Show item details on the shop page as well as the collection page, allows user to add items to shopping bag
-const CollectionItem = ({ item, addItem }) => {
+export const CollectionItem = ({ item, addItem }) => {
     const { name, price, imageUrl } = item;
 
     return (
@@ -18,7 +24,7 @@ const CollectionItem = ({ item, addItem }) => {
             </CollectionFooterContainer>
             <AddButton onClick={() => addItem(item)} inverted>
                 Add to cart
-            </AddButton>
+      </AddButton>
         </CollectionItemContainer>
     );
 };
@@ -27,4 +33,7 @@ const mapDispatchToProps = dispatch => ({
     addItem: item => dispatch(addItem(item))
 });
 
-export default connect(null, mapDispatchToProps)(CollectionItem);
+export default connect(
+    null,
+    mapDispatchToProps
+)(CollectionItem);

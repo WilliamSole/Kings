@@ -6,11 +6,9 @@ import { selectIsCollectionFetching } from '../../redux/shop/shop.selectors';
 import WithSpinner from '../with-spinner/with-spinner.component';
 import CollectionsOverview from './collections-overview.component';
 
-const mapStateToProps =  createStructuredSelector({
+const mapStateToProps = createStructuredSelector({
     isLoading: selectIsCollectionFetching
 });
-
-// Modifies the component with a HOC to decide when to use loading icon
 
 const CollectionsOverviewContainer = compose(
     connect(mapStateToProps),

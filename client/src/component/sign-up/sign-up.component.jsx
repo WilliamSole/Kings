@@ -8,81 +8,81 @@ import { signUpStart } from '../../redux/user/user.actions';
 
 import { SignUpContainer, SignUpTitle } from './sign-up.styles';
 
-// Sign up to create a new user in the firestore database
 const SignUp = ({ signUpStart }) => {
-    const [userDetails, setDetails] = useState({ displayName: '', email: '', password: '', confirmPassword: '' });
+    const [userCredentials, setUserCredentials] = useState({
+        displayName: '',
+        email: '',
+        password: '',
+        confirmPassword: ''
+    });
 
-    const { displayName, email, password, confirmPassword } = userDetails;
+    const { displayName, email, password, confirmPassword } = userCredentials;
 
-    const handleSubmit = async e => {
-        e.preventDefault();
+    const handleSubmit = async event => {
+        event.preventDefault();
 
         if (password !== confirmPassword) {
-            alert("Passwords don't match");
+            alert("passwords don't match");
             return;
         }
 
         signUpStart({ displayName, email, password });
     };
 
-    const handleChange = e => {
-        const { name, value } = e.target;
-        
-        setDetails({ ...userDetails, [name]: value });
-    }
+    const handleChange = event => {
+        const { name, value } = event.target;
+
+        setUserCredentials({ ...userCredentials, [name]: value });
+    };
 
     return (
         <SignUpContainer>
-            <SignUpTitle>I do not have an account</SignUpTitle>
+            <SignUpTitle>I do not have a account</SignUpTitle>
             <span>Sign up with your email and password</span>
-
             <form className='sign-up-form' onSubmit={handleSubmit}>
-
                 <FormInput
-                    name='displayName'
                     type='text'
+                    name='displayName'
                     value={displayName}
-                    handleChange={handleChange}
+                    onChange={handleChange}
                     label='Display Name'
                     required
                 />
-
                 <FormInput
-                    name='email'
                     type='email'
+                    name='email'
                     value={email}
-                    handleChange={handleChange}
+                    onChange={handleChange}
                     label='Email'
                     required
                 />
-
                 <FormInput
-                    name='password'
                     type='password'
+                    name='password'
                     value={password}
-                    handleChange={handleChange}
+                    onChange={handleChange}
                     label='Password'
                     required
                 />
-
                 <FormInput
-                    name='confirmPassword'
                     type='password'
+                    name='confirmPassword'
                     value={confirmPassword}
-                    handleChange={handleChange}
+                    onChange={handleChange}
                     label='Confirm Password'
                     required
                 />
-
-                <CustomButton type='submit'>Sign Up</CustomButton>
-
+                <CustomButton type='submit'>SIGN UP</CustomButton>
             </form>
         </SignUpContainer>
-    )
-}
+    );
+};
 
 const mapDispatchToProps = dispatch => ({
-    signUpStart: userDetails => dispatch(signUpStart(userDetails))
+    signUpStart: userCredentials => dispatch(signUpStart(userCredentials))
 });
 
-export default connect(null, mapDispatchToProps)(SignUp);
+export default connect(
+    null,
+    mapDispatchToProps
+)(SignUp);

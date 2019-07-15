@@ -29,14 +29,15 @@ export const FormInputContainer = styled.input`
   border-radius: 0;
   border-bottom: 1px solid ${subColor};
   margin: 25px 0;
-  height: 50px;
   &:focus {
     outline: none;
   }
   &:focus ~ label {
-    ${shrinkLabelStyles};
+    ${shrinkLabelStyles}
   }
 `;
+
+FormInputContainer.displayName = 'FormInputContainer';
 
 export const FormInputLabel = styled.label`
   color: ${subColor};
@@ -48,6 +49,8 @@ export const FormInputLabel = styled.label`
   top: 10px;
   transition: 300ms ease all;
   &.shrink {
-    ${shrinkLabelStyles};
+    ${shrinkLabelStyles}
   }
 `;
+
+FormInputLabel.displayName = 'FormInputLabel';

@@ -8,19 +8,16 @@ import MenuItem from '../menu-item/menu-item.component';
 
 import { DirectoryMenuContainer } from './directory.styles';
 
-//Shows items on homepage 
-const Directory = ({sections}) => (
+export const Directory = ({ sections }) => (
     <DirectoryMenuContainer>
-        {
-            sections.map(({ id, ...otherSectionProps }) => (
-                <MenuItem key={id} {...otherSectionProps} />
-            ))
-        }
+        {sections.map(({ id, ...otherSectionProps }) => (
+            <MenuItem key={id} {...otherSectionProps} />
+        ))}
     </DirectoryMenuContainer>
-)
+);
 
 const mapStateToProps = createStructuredSelector({
     sections: selectDirectorySections
-})
+});
 
 export default connect(mapStateToProps)(Directory);

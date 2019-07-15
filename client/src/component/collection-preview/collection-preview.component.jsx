@@ -1,23 +1,33 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
-import CollectionItem from '../collection-item/collection-item.component'
+import CollectionItem from '../collection-item/collection-item.component';
 
-import { CollectionPreviewContainer, TitleContainer, PreviewContainer } from './collection-preview.styles';
+import {
+    CollectionPreviewContainer,
+    TitleContainer,
+    PreviewContainer
+} from './collection-preview.styles';
 
-// Shows items and limits them to 4 on the shop page
-const CollectionPreview = ({ title, items }) => (
-    <CollectionPreviewContainer>
-        <TitleContainer>{title}</TitleContainer>
-        <PreviewContainer>
-            {
-                items
+export const CollectionPreview = ({
+    title,
+    items,
+    history,
+    match,
+    routeName
+}) => (
+        <CollectionPreviewContainer>
+            <TitleContainer onClick={() => history.push(`${match.path}/${routeName}`)}>
+                {title.toUpperCase()}
+            </TitleContainer>
+            <PreviewContainer>
+                {items
                     .filter((item, idx) => idx < 4)
                     .map(item => (
                         <CollectionItem key={item.id} item={item} />
-                    ))
-            }
-        </PreviewContainer>
-    </CollectionPreviewContainer>
-)
+                    ))}
+            </PreviewContainer>
+        </CollectionPreviewContainer>
+    );
 
-export default CollectionPreview;
+export default withRouter(CollectionPreview);
